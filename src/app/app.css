@@ -1,0 +1,201 @@
+/* =========================================
+   全域變數與基礎設定
+   ========================================= */
+:root {
+  --color-primary: #C49E6E;
+  --color-text-dark: #4F4F4F;
+  --color-bg-light: #FFFFFF;
+  --color-bg-alt: #F5F5F5;
+}
+
+/* =========================================
+   導航欄 (Navbar)
+   ========================================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary) !important;
+}
+
+/* =========================================
+   英雄區 (Hero Section) - 修正補強
+   ========================================= */
+/* =========================================
+   英雄區 (Hero Section) - 修正為置中自適應
+   ========================================= */
+.hero-section {
+  display: flex;
+  flex-direction: column; /* 改為垂直堆疊，確保內容能輕鬆置中 */
+  align-items: center;    /* 水平置中 */
+  justify-content: center; /* 垂直置中 */
+  text-align: center;     /* 讓文字也置中 */
+  padding: 80px 20px;     /* 上下留白，左右自適應 */
+  background-color: var(--color-bg-alt);
+  min-height: 60vh;       /* 確保英雄區有足夠的高度感 */
+}
+
+.hero-content {
+  max-width: 800px;       /* 限制文字寬度，避免在寬螢幕上太散 */
+  margin-bottom: 40px;    /* 與下方圖片保持間距 */
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3rem); /* 字體大小隨螢幕縮放 */
+  margin-bottom: 15px;
+}
+
+/* 關鍵：自適應圖片樣式 */
+.hero-img {
+  width: 100%;            /* 預設寬度 100% */
+  max-width: 900px;       /* 設定最大上限，避免圖片在 4K 螢幕上過大 */
+  height: auto;           /* 保持比例縮放 */
+  border-radius: 20px;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.hero-img:hover {
+  transform: scale(1.02); /* 增加一點點互動縮放感 */
+}
+
+/* 按鈕置中優化 */
+.cta-btn {
+  margin-top: 10px;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+}
+
+/* =========================================
+   RWD 手機版微調
+   ========================================= */
+
+
+.cta-btn {
+  padding: 12px 35px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   特色服務區：網格佈局
+   ========================================= */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.card {
+  background-color: var(--color-bg-light);
+  border: 1px solid var(--color-primary);
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card-img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-size: 1.25rem;
+}
+
+.card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.card button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+/* =========================================
+   RWD 手機版設定 (螢幕寬度小於 768px 時觸發)
+   ========================================= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero-section {
+    flex-direction: column-reverse; /* 手機版讓文字在下，圖在上 */
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero-img {
+    max-width: 100%;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}

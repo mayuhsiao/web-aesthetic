@@ -1,0 +1,7 @@
+/* src/styles.css */
+:root {
+  --color-primary: #C49E6E; /* 閣美學 Logo 的金色/駝色 */
+  --color-text-dark: #4F4F4F; /* Logo 中文字的深灰/褐色 */
+  --color-bg-light: #FFFFFF; /* 純白背景 */
+  --color-bg-alt: #F5F5F5; /* 淺灰替代背景 */
+}
