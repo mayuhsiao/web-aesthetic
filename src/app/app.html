@@ -2,7 +2,7 @@
   
   <header class="navbar" [style.background-color]="'var(--color-bg-light)'">
     <div class="logo">
-      <span class="logo-text" [style.color]="'var(--color-primary)'">閣美學 STATION SQUARE</span>
+      <span class="logo-text" [style.color]="'var(--color-primary)'">閣美學</span>
     </div>
     <nav class="nav-links">
       <a routerLink="/" [style.color]="'var(--color-text-dark)'">首頁 Home</a>
@@ -15,7 +15,14 @@
     <div class="hero-content">
       <h1 [style.color]="'var(--color-primary)'">歡迎來到閣美學</h1>
       <p [style.color]="'var(--color-text-dark)'">閣美學管委會</p>
-      <button class="cta-btn" [style.background-color]="'var(--color-primary)'" [style.color]="'white'">開始體驗</button>
+       <a href="https://line.me/ti/g2/glILSMp1IDWTTzqqxw_uqd6wds6Ah1Ez627OIQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" 
+           target="_blank" 
+           [style.background-color]="'var(--color-primary)'" 
+           [style.color]="'white'"
+           style="text-decoration: none; padding: 10px 24px; border-radius: 20px; font-weight: bold; display: inline-block; transition: opacity 0.2s;">
+           加入閣美學官方LINE
+        </a>
+
     </div>
     <img src="/images/c1.jpg" alt="Community Exterior" class="hero-img">
   </section>
