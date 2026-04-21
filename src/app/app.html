@@ -7,45 +7,59 @@
     <nav class="nav-links">
       <a routerLink="/" [style.color]="'var(--color-text-dark)'">首頁 Home</a>
       <a routerLink="/notices" [style.color]="'var(--color-text-dark)'">公告 Notices</a>
-      <a routerLink="/booking" [style.color]="'var(--color-text-dark)'">預約 Booking</a>
-      <a routerLink="/maintenance" [style.color]="'var(--color-text-dark)'">報修 Maintenance</a>
-
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScVkmJEkJJYhUuED0NkJ-KtJyrNA1zJAD9b_cHB7tXYCzT8xA/viewform" target="_blank" [style.color]="'var(--color-text-dark)'">報修 Maintenance</a>
     </nav>
   </header>
 
   <section class="hero-section" [style.background-color]="'var(--color-bg-alt)'">
     <div class="hero-content">
       <h1 [style.color]="'var(--color-primary)'">歡迎來到閣美學</h1>
-      <p [style.color]="'var(--color-text-dark)'">您的精緻生活管理平台 STATION SQUARE。</p>
+      <p [style.color]="'var(--color-text-dark)'">閣美學管委會</p>
       <button class="cta-btn" [style.background-color]="'var(--color-primary)'" [style.color]="'white'">開始體驗</button>
     </div>
     <img src="/images/c1.jpg" alt="Community Exterior" class="hero-img">
   </section>
 
   <section class="features-section">
-    <h2 [style.color]="'var(--color-primary)'" style="text-align: center;">社區精選服務</h2>
+    <h2 [style.color]="'var(--color-primary)'" style="text-align: center; margin-bottom: 20px;">社區精選服務</h2>
     <div class="features-grid">
       
       <div class="card" [style.border-color]="'var(--color-primary)'">
         <img src="/images/a1.jpg" alt="Notices Icon" class="card-img">
         <h3 [style.color]="'var(--color-text-dark)'">公告通知</h3>
         <p [style.color]="'var(--color-text-dark)'">即時接收社區公告與會議紀錄。</p>
-        <button [style.background-color]="'var(--color-primary)'" [style.color]="'white'">查看公告</button>
+        <button routerLink="/notices" [style.background-color]="'var(--color-primary)'" [style.color]="'white'">查看公告</button>
       </div>
       
       <div class="card" [style.border-color]="'var(--color-primary)'">
-         <img src="/images/a2.jpg" alt="Notices Icon" class="card-img">
+        <img src="/images/a2.jpg" alt="Repair Icon" class="card-img">
         <h3 [style.color]="'var(--color-text-dark)'">公設及住戶報修</h3>
-        <p [style.color]="'var(--color-text-dark)'">公設及住戶報修。</p>
-        <button [style.background-color]="'var(--color-primary)'" [style.color]="'white'">立即預約</button>
+        <p [style.color]="'var(--color-text-dark)'">公設及住戶專有部分報修服務。</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScVkmJEkJJYhUuED0NkJ-KtJyrNA1zJAD9b_cHB7tXYCzT8xA/viewform" 
+           target="_blank" 
+           [style.background-color]="'var(--color-primary)'" 
+           [style.color]="'white'"
+           style="text-decoration: none; padding: 10px 24px; border-radius: 20px; font-weight: bold; display: inline-block; transition: opacity 0.2s;">
+          立即報修
+        </a>
       </div>
       
       <div class="card" [style.border-color]="'var(--color-primary)'">
-        <img src="/images/a3.jpg" alt="Notices Icon" class="card-img">
-        <h3 [style.color]="'var(--color-text-dark)'">召標資訊</h3>
-        <p [style.color]="'var(--color-text-dark)'">廠商召標資訊。</p>
-        <button [style.background-color]="'var(--color-primary)'" [style.color]="'white'">提交報修</button>
+        <img src="/images/a3.jpg" alt="Bidding Icon" class="card-img">
+        <h3 [style.color]="'var(--color-text-dark)'">招標資訊</h3>
+        <p [style.color]="'var(--color-text-dark)'">社區各項工程與採購招標公告。</p>
+        <a href="/pdfs/20260415bid.pdf" 
+           target="_blank" 
+           [style.background-color]="'var(--color-primary)'" 
+           [style.color]="'white'"
+           style="text-decoration: none; padding: 10px 24px; border-radius: 20px; font-weight: bold; display: inline-block; transition: opacity 0.2s;">
+           查看招標資訊
+
+        </a>
       </div>
+      
     </div>
   </section>
 </div>
+
+<router-outlet></router-outlet>

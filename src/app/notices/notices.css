@@ -1,0 +1,114 @@
+.page-container {
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.notices-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.notice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 單筆公告的設計 */
+.notice-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-left: 5px solid var(--color-primary); /* 左側加一條金線增加質感 */
+}
+
+.notice-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.notice-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap; /* 手機版時允許換行 */
+}
+
+.notice-date {
+  color: #888;
+  font-size: 0.95rem;
+  font-family: monospace;
+}
+
+/* 分類標籤樣式 */
+.notice-category {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  background-color: #eee;
+  color: #555;
+}
+.cat-meeting { background-color: #e3f2fd; color: #1976d2; } /* 會議紀錄用藍色 */
+.cat-finance { background-color: #e8f5e9; color: #388e3c; } /* 財務用綠色 */
+
+.important-tag {
+  color: white;
+  background-color: #e53935;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.notice-title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-text-dark);
+}
+
+/* 下載按鈕設計 */
+.download-btn {
+  padding: 8px 20px;
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.download-btn:hover {
+  background-color: var(--color-primary);
+  color: white !important;
+}
+
+/* =========================================
+   手機版自適應
+   ========================================= */
+@media (max-width: 600px) {
+  .notice-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .download-btn {
+    width: 100%;
+  }
+}

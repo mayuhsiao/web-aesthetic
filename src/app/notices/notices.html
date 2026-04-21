@@ -1,0 +1,41 @@
+<div class="page-container" [style.background-color]="'var(--color-bg-alt)'">
+  <div class="notices-wrapper">
+    
+    <header class="page-header">
+      <h1 [style.color]="'var(--color-primary)'">社區公告與會議紀錄</h1>
+      <p [style.color]="'var(--color-text-dark)'">掌握閣美學最新動態與財務資訊</p>
+    </header>
+
+    <div class="notice-list">
+      @for (notice of notices; track notice.id) {
+        <div class="notice-item" [style.background-color]="'var(--color-bg-light)'">
+          
+          <div class="notice-info">
+            <span class="notice-date">{{ notice.date }}</span>
+            <span class="notice-category" 
+                  [ngClass]="{'cat-meeting': notice.category === '會議紀錄', 'cat-finance': notice.category === '財務報表'}">
+              {{ notice.category }}
+            </span>
+            <h3 class="notice-title">
+              @if (notice.isImportant) {
+                <span class="important-tag">重要</span>
+              }
+              {{ notice.title }}
+            </h3>
+          </div>
+
+              <a [href]="notice.pdfUrl" target="_blank" class="download-btn" 
+          [style.color]="'var(--color-primary)'" 
+          [style.border-color]="'var(--color-primary)'"
+          style="text-decoration: none; display: inline-block; text-align: center;">
+          查看/下載
+        </a>
+          
+        </div>
+      } @empty {
+        <div class="empty-state">目前沒有任何公告。</div>
+      }
+    </div>
+
+  </div>
+</div>
